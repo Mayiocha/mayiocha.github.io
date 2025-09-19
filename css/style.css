@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border-radius: 1rem;
+    height: 2rem;
+    width: 6rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    font-size: .7rem;
+    color: white;
+    background: #6f00a6;
+    background: linear-gradient(0deg, rgba(111, 0, 166, 1) 0%, rgba(149, 45, 253, 1) 51%, rgba(77, 34, 195, 1) 100%);
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+   
+}
+body{
+    font-family:  "Roboto", sans-serif;
+}
+
+section#home{
+    height: 100vh;
+    background: #4d22c3;
+    background: linear-gradient(0deg, rgba(77, 34, 195, 1) 0%, rgba(164, 40, 226, 1) 100%, rgba(149, 45, 253, 1) 54%);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+   
+}
+section#home header{
+    display: flex;
+    justify-content: space-between;
+
+}
+section#home header .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+section#home header .title img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+section#home header div h1{
+    color: white;
+}
+section#home header nav ul{
+    display: flex;
+    gap: 2rem;
+    margin-top: 10px;
+}
+section#home header nav ul li{
+    list-style: none;
+}
+section#home header nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family:  "Roboto", sans-serif;
+}
+section#home #content{
+    display: flex;
+    color: aliceblue;
+}
+section#home #content h2 {
+    font-size: 4rem;
+    color: aliceblue;
+
+}
+section#home #content div{
+    flex: 1;
+}
