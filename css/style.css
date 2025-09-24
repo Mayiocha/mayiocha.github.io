@@ -78,3 +78,27 @@ section#home #content h2 {
 section#home #content div{
     flex: 1;
 }
+section#home #content .conI{
+    display: flex;   
+    font-family:  "Roboto", sans-serif;
+} 
+
+section#home #content .conM{
+    margin-left: 200px;
+    border-radius: 50%;
+}
+section#home #content .conM img{
+
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+/*------------------------------------------------------------------------------*/
+section#second{
+    height: 100vh;
+    background: #4d22c3;
+    background: linear-gradient(0deg, rgba(77, 34, 195, 1) 0%, rgba(164, 40, 226, 1) 100%, rgba(149, 45, 253, 1) 54%);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+}
