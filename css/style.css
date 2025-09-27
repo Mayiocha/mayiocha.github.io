@@ -6,18 +6,20 @@
 }
 button{
     border-radius: 1rem;
-    height: 2rem;
-    width: 6rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 220px;
     border: none;
-    font-size: .7rem;
+    font-size: .8rem;
     color: white;
     background: #6f00a6;
     background: linear-gradient(0deg, rgba(111, 0, 166, 1) 0%, rgba(149, 45, 253, 1) 51%, rgba(77, 34, 195, 1) 100%);
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
-   
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+button:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 body{
     font-family:  "Roboto", sans-serif;
@@ -25,8 +27,8 @@ body{
 
 section#home{
     height: 100vh;
-    background: #4d22c3;
-    background: linear-gradient(0deg, rgba(77, 34, 195, 1) 0%, rgba(164, 40, 226, 1) 100%, rgba(149, 45, 253, 1) 54%);
+    background: #702db3;
+    background: radial-gradient(circle,rgba(112, 45, 179, 1) 0%, rgba(112, 45, 179, 1) 0%, rgba(77, 41, 131, 1) 24%, rgba(67, 40, 118, 1) 37%, rgba(56, 39, 103, 1) 50%, rgba(51, 38, 96, 1) 63%, rgba(45, 37, 88, 1) 78%, rgba(4, 33, 32, 1) 100%);
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 30px;
@@ -51,6 +53,7 @@ section#home header .title img{
 
 section#home header div h1{
     color: white;
+    padding-left: 1rem;
 }
 section#home header nav ul{
     display: flex;
@@ -68,10 +71,13 @@ section#home header nav ul li a{
 }
 section#home #content{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: aliceblue;
+    margin-top: 4rem;
 }
 section#home #content h2 {
-    font-size: 4rem;
+    font-size: 5rem;
     color: aliceblue;
     display: flex;
 
@@ -80,26 +86,264 @@ section#home #content div{
     flex: 1;
 }
 section#home #content .conI{
-    display: flex;   
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family:  "Roboto", sans-serif;
+    gap: 1rem;
+    padding-right: 3rem;
 } 
+section#home #content .conI .buttons{
+    display: flex;
+    gap: 1rem;
+   
+
+}
+section#home #content .conI .btnConI{
+    margin-top: 2rem;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(90deg, #6f00a6, #952dfd, #4d22c3);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+section#home #content .conI .btnConI:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 
 section#home #content .conM{
     margin-left: 200px;
     border-radius: 50%;
 }
 section#home #content .conM img{
-
-    width: 20rem;
-    height: 20rem;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0.5, 0.5);
+    width: 30rem;
+    height: 30rem;
     border-radius: 50%;
 }
 /*------------------------------------------------------------------------------*/
 section#second{
     height: 100vh;
-    background: #4d22c3;
-    background: linear-gradient(0deg, rgba(77, 34, 195, 1) 0%, rgba(164, 40, 226, 1) 100%, rgba(149, 45, 253, 1) 54%);
+    background: #702db3;
+    background: radial-gradient(circle,rgba(112, 45, 179, 1) 0%, rgba(112, 45, 179, 1) 0%, rgba(77, 41, 131, 1) 24%, rgba(67, 40, 118, 1) 37%, rgba(56, 39, 103, 1) 50%, rgba(51, 38, 96, 1) 63%, rgba(45, 37, 88, 1) 78%, rgba(4, 33, 32, 1) 100%);
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+section#second .img img{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    flex: 1;
+    display: flex;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+}
+
+section#second .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 4rem;
+}
+
+section#second .info h2{
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family:  "Roboto", sans-serif;
+}  
+section#second .info h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+    font-family:  "Roboto", sans-serif;
+} 
+section#second .info p{
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family:  "Roboto", sans-serif;
+}
+section#second .info div div{
+    flex: 1;
+    height: 2rem;
+    background: white;
+    border-radius: 1rem;
+    width: 200px;
+    text-align: center;
+    line-height: 2rem;
+}
+section#second .info div{
+    display: flex;
+    gap: 1rem;
+}
+section#second .info .skills div {
+    height: 2.5rem;
+    background: white;
+    border-radius: 1rem;
+    display: flex;         
+    justify-content: space-between; 
+    align-items: center;     
+    padding: 0 1rem;          
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #702db3;
+}
+
+.skill-name {
+    font-size: 1rem;
+}
+
+.skill-percent {
+    font-size: 0.9rem;
+}
+section#second .info .btnS{
+    margin-top: 2rem;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(90deg, #6f00a6, #952dfd, #4d22c3);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+section#second .info .btnS:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+/*------------------------------------------------------------------------------*/
+section#third{
+    height: 100vh;
+    background: #702db3;
+    background: radial-gradient(circle,rgba(112, 45, 179, 1) 0%, rgba(112, 45, 179, 1) 0%, rgba(77, 41, 131, 1) 24%, rgba(67, 40, 118, 1) 37%, rgba(56, 39, 103, 1) 50%, rgba(51, 38, 96, 1) 63%, rgba(45, 37, 88, 1) 78%, rgba(4, 33, 32, 1) 100%);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
+}
+section#third h1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 3rem;
+}
+section#third p{
+    color: white;
+    font-size: 1.5rem;
+    font-family:  "Roboto", sans-serif;
+}
+section#third .sup{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+section#third .sup div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+section#third .sup div img{
+    width: 20rem;
+    height: 12rem;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+section#third .sup div{
+    width: 28rem;
+    height: 22rem;
+    border-radius: 20px;
+    padding-top: 10px;
+    margin-right: 20px;
+    background-color: rgba(240, 255, 255, 0.103);
+}
+section#third .inf{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+section#third .inf div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+section#third .inf div img{
+    width: 20rem;
+    height: 12rem;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+section#third .inf div{
+    width: 28rem;
+    height: 22rem;
+    border-radius: 20px;
+    padding-top: 10px;
+    margin-right: 20px;
+    background-color: rgba(240, 255, 255, 0.103);
+}
+section#third .sup div h1{
+    font-size: 1.5rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+}
+section#third .sup div p{
+    font-size: 1rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    padding: 0 1rem;     
+    margin-top: 0.5rem;
+}
+section#third .inf div h1{
+    font-size: 1.5rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin-top: 1rem;
+    text-align: center;
+}
+section#third .inf div p{
+    font-size: 1rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    padding: 0 1rem;     
+    margin-top: 0.5rem;
+}
+/*------------------------------------------------------------------------------*/
+section#fourth{
+    height: 100vh;
+    background: #702db3;
+    background: radial-gradient(circle,rgba(112, 45, 179, 1) 0%, rgba(112, 45, 179, 1) 0%, rgba(77, 41, 131, 1) 24%, rgba(67, 40, 118, 1) 37%, rgba(56, 39, 103, 1) 50%, rgba(51, 38, 96, 1) 63%, rgba(45, 37, 88, 1) 78%, rgba(4, 33, 32, 1) 100%);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
 }
