@@ -73,6 +73,7 @@ section#home #content{
 section#home #content h2 {
     font-size: 4rem;
     color: aliceblue;
+    display: flex;
 
 }
 section#home #content div{
