@@ -347,3 +347,448 @@ section#fourth{
     justify-content: start;
     gap: 2rem;
 }
+section#fourth h1 {
+    margin-top: 2rem;
+    font-size: 5rem;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    transform: uppercase;
+    color: #fff;
+    margin-bottom: 10rem;
+}
+section#fourth .sup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section#fourth .sup .skill {
+    height: 5rem;
+    border-radius: 15px;
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    background-color: #0000001e;
+}
+section#fourth .sup .skill .izquierda {
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; 
+}
+section#fourth .sup .skill .icono {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+}
+section#fourth .sup .skill .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: purple;
+    z-index: 0;
+}
+section#fourth .sup .skill .icono img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    z-index: 1;
+}
+section#fourth .sup .skill .text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    color: #fff;
+}
+section#fourth .sup .skill .barra {
+    margin-right: 2rem;
+    width: 50%;
+    height: 0.5rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+section#fourth .sup .skill .barra .progreso {
+    height: 100%;
+    background: #fff;
+    border-radius: 0.25rem;
+    transition: width 1s ease;
+}
+/*------------------------------------------------------------------------------*/
+section#fifth {
+  background: radial-gradient(circle, rgba(112, 45, 179, 1) 0%, rgba(77, 41, 131, 1) 24%, rgba(67, 40, 118, 1) 37%, rgba(56, 39, 103, 1) 50%, rgba(51, 38, 96, 1) 63%, rgba(45, 37, 88, 1) 78%, rgba(4, 33, 32, 1) 100%);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+}
+section#fifth .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+section#fifth .subtitle {
+  font-size: 1.2rem;
+  color: #c4b5fd;
+  margin-bottom: 10px;
+}
+section#fifth .title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+section#fifth .filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+section#fifth .filters button {
+  background: #4b0082;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+section#fifth .filters button.active,
+section#fifth .filters button:hover {
+  background: #a855f7;
+}
+section#fifth .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+}
+section#fifth .grid .item {
+  width: 100%;
+  max-width: 350px;
+  background: #1f1f2e;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; 
+}
+section#fifth .grid .item img {
+  width: 100%;
+  aspect-ratio: 1/1;   
+  object-fit: cover;      
+  display: block;
+  border-bottom: 3px solid #7c3aed;
+  transition: transform 0.4s ease;
+}
+section#fifth .grid .item:hover img {
+  transform: scale(1.05);
+}
+section#fifth .grid .category {
+  display: block;
+  padding: 12px 0;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  background: transparent;
+}
+section#fifth .button-box {
+  margin-top: 50px;
+}
+section#fifth .view-work {
+  background: #7c3aed;
+  padding: 14px 40px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+section#fifth .view-work:hover {
+  background: #a855f7;
+}
+/*------------------------------------------------------------------------------*/
+section#sixth {
+  position: relative;
+  background: radial-gradient(circle, rgba(112,45,179,1) 0%, rgba(77,41,131,1) 24%, rgba(67,40,118,1) 37%, rgba(56,39,103,1) 50%, rgba(51,38,96,1) 63%, rgba(45,37,88,1) 78%, rgba(4,33,32,1) 100%);
+  padding: 80px 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+/* Contenedor principal */
+section#sixth .contact-container {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Columna izquierda */
+section#sixth .contact-info {
+  flex: 1;
+  color: #fff;
+  padding-right: 40px;
+}
+section#sixth .contact-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+section#sixth .contact-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+section#sixth .contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+section#sixth .contact-info ul li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+section#sixth .contact-info ul li span {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Columna derecha - Formulario */
+section#sixth .contact-form {
+  flex: 1;
+  background: rgba(31,31,46,0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+section#sixth .contact-form h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+section#sixth .contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+section#sixth .contact-form input,
+section#sixth .contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+}
+section#sixth .contact-form button {
+  background: #ffc107;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  color: #000;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+section#sixth .contact-form button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Imagen estática de mapa */
+section#sixth .map-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  overflow: hidden;
+  z-index: 1;
+}
+section#sixth .map-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+/*------------------------------------------------------------------------------*/
+section#seventh {
+  background: radial-gradient(circle, rgba(112,45,179,1) 0%, rgba(77,41,131,1) 24%, rgba(67,40,118,1) 37%, rgba(56,39,103,1) 50%, rgba(51,38,96,1) 63%, rgba(45,37,88,1) 78%, rgba(4,33,32,1) 100%);
+  padding: 80px 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  color: #fff;
+}
+section#seventh .container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+section#seventh .title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+section#seventh .news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section#seventh .news-item {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+section#seventh .news-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+section#seventh .news-date {
+  text-align: center;
+  min-width: 80px;
+}
+section#seventh .news-date h3 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+section#seventh .news-date p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+section#seventh .news-content {
+  flex: 1;
+  padding: 0 30px;
+  text-align: left;
+}
+section#seventh .news-content a {
+  color: #a855f7;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
+section#seventh .news-content h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+section#seventh .news-content p {
+  font-size: 1rem;
+  color: #ddd;
+}
+section#seventh .news-arrow {
+  font-size: 2rem;
+  color: #a855f7;
+  flex-shrink: 0;
+}
+/*------------------------------------------------------------------------------*/
+section#eighth {
+  background: radial-gradient(circle, rgba(112,45,179,1) 0%, rgba(77,41,131,1) 24%, rgba(67,40,118,1) 37%, rgba(56,39,103,1) 50%, rgba(51,38,96,1) 63%, rgba(45,37,88,1) 78%, rgba(4,33,32,1) 100%);
+  padding: 80px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+section#eighth .footer-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  align-items: start;
+}
+section#eighth .footer-about .profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+section#eighth .footer-about .profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+section#eighth .footer-about h3 {
+  font-size: 1.5rem;
+}
+section#eighth .footer-about .intro {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+section#eighth .footer-about .since {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(255,255,255,0.1);
+}
+section#eighth .footer-links,
+section#eighth .footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+section#eighth .footer-links h4,
+section#eighth .footer-social h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+section#eighth .footer-links ul,
+section#eighth .footer-social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+section#eighth .footer-links ul li,
+section#eighth .footer-social ul li {
+  margin-bottom: 8px;
+}
+section#eighth .footer-links ul li a,
+section#eighth .footer-social ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+section#eighth .footer-links ul li a:hover,
+section#eighth .footer-social ul li a:hover {
+  color: #a855f7;
+}
+@media (max-width: 900px) {
+  section#eighth .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  section#eighth .footer-about .profile {
+    justify-content: center;
+  }
+}
