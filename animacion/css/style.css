@@ -3,41 +3,111 @@
   padding: 0;
   box-sizing: border-box;
 }
+section#pri{
+    height: 100vh;
+    width: auto;
+    background: #101010;
+    overflow: hidden;
+}
+section#pri #content{
+    width: 100%;
+    height: 100%;
+}
+section#pri #content img#bg{
+    width: 100%;
+    height: 100%;
+}
+section#pri #content #dk{
+    width: 10rem;
+    height: 12rem;
+    position: absolute;
+    top: 22%;
+    left: 12%;
+    object-fit: cover;
+    animation: salto 10s infinite;
+}
+section#pri #content #dk img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
-body {
-  overflow: hidden;
 }
-#contenedor {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: url("../img/bg.jpg") no-repeat center/cover;
-  overflow: hidden;
+section#pri #content #barr{
+    width: 10rem;
+    height: 12rem;
+    position: absolute;
+    top: 65%;
+    left: 12%;
+    object-fit: cover;
 }
-#personaje {
-  position: absolute;
-  bottom: 58%; 
-  left: 8%;      
-  width: 240px;
-  height: 240px;
-  background: url("../img/dk.png") no-repeat center/contain;
+section#pri #content #barr img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+section#pri #content #barr2{
+    width: 10rem;
+    height: 12rem;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    object-fit: cover;
+}
+section#pri #content #barr2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gbarril{
+    animation: rotBarril 3s ease-in-out infinite;
 
-#barril1 {
-  position: absolute;
-  bottom: 13%;   
-  left: 10%;    
-  width: 160px;
-  height: 160px;
-  background: url("../img/barril.png") no-repeat center/contain;
-  transform: rotate(-15deg);
 }
+.gbarril2{
+    animation: rotBarril 4s ease-in-out infinite alternate;
 
-#barril2 {
-  position: absolute;
-  bottom: 14%;  
-  right: 10%;   
-  width: 160px;
-  height: 160px;
-  background: url("../img/barril.png") no-repeat center/contain;
+}
+@keyframes  rotBarril{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes salto{
+    0%{
+        top: -200px;
+        left: -200px;
+        transform: scale(1);
+    }
+    16%{
+        top: 22%;
+        left: 12%;
+    }
+    26%{
+        left: 65%;
+        top: 12%;
+        transform: scale(1) rotate(180deg);
+    }
+    64%{
+        left: 80%;
+        top:80%;
+        transform: scale(0.5);
+    }
+    72%{
+        top: 65%;
+        left: 65%;
+        transform: scale(1) rotate(180deg);
+    }
+    82%{
+        top: 65%;
+        left: 12%;
+        transform: scale(0.5);
+    }
+    100%{
+        top: -200px;
+        left: -200px;
+        transform: scale(1) rotate(360deg);
+    }
+
 }
