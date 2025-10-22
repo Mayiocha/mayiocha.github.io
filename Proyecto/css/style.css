@@ -1,0 +1,243 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: Arial, Helvetica, sans-serif; color: #111; }
+
+.fondo-metalico {
+  background:
+    linear-gradient(110deg,
+      rgba(255,255,255,.10) 0%,
+      rgba(255,255,255,0) 22%,
+      rgba(255,255,255,.08) 46%,
+      rgba(255,255,255,0) 70%
+    ),
+    radial-gradient(1400px 800px at 80% 20%,
+      #12406f 0%,
+      #0e2a4a 40%,
+      #0a1b2e 100%);
+  background-attachment: fixed, fixed;
+}
+
+.menu{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 72px;
+  padding: 0 20px;
+  background:
+    linear-gradient(180deg, rgba(10,27,46,.75), rgba(10,27,46,.55)),
+    radial-gradient(600px 200px at 20% -40%, rgba(18,64,111,.35), transparent 60%),
+    radial-gradient(600px 200px at 80% -40%, rgba(14,42,74,.35), transparent 60%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #e7edf7, #c9d1d9 55%, #a9b3bd 100%);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .5), 0 6px 14px rgba(0, 0, 0, .35);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+.marca{ color: #eaf2ff; font-size: 15px; font-weight: 700; text-transform: uppercase; }
+.espacio{ flex: 1; }
+.iconos{ display: flex; align-items: center; gap: 10px; }
+.enlace-nav{
+  position: relative;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #eaf2ff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all .2s ease;
+  opacity: .9;
+}
+.enlace-nav:hover{ background-color: rgba(255,255,255,.06); opacity: 1; transform: translateY(-1px); }
+.enlace-nav.activo{ background-color: rgba(255,255,255,.10); }
+
+.portada {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+}
+.portada .capa {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+}
+.portada .texto-portada {
+  position: relative;
+  z-index: 2;
+  padding: 80px 24px 24px 24px;
+  max-width: 440px;
+  color: #eaf2ff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.45);
+}
+.portada .texto-portada h1 {
+  font-size: clamp(42px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: .4px;
+  margin-bottom: 16px;
+}
+.portada .texto-portada p {
+  font-size: clamp(15px, 2.2vw, 18px);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+.subtexto-hero{
+  display:block;
+  color:#cfe2ff;
+  opacity:.85;
+  margin-top:8px;
+  font-size:14px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1.5px solid rgba(0,0,0,.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+}
+.boton-claro {
+  background: #ffffff;
+  color: #0b1d33;
+  border-color: rgba(255,255,255,.2);
+}
+
+.portada .tarjetas-portada {
+  position: absolute;
+  right: 24px;
+  top: 70px;
+  width: min(760px, 62vw);
+  height: 380px;
+}
+.portada .tarjeta {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.55);
+}
+.portada .tarjeta-a { left: 0; top: 0; width: 60%; height: 68%; transform: rotate(-1deg); }
+.portada .tarjeta-b { right: 0; top: 0; width: 50%; height: 60%; transform: rotate(1.5deg); }
+.portada .tarjeta-c { right: 4%; bottom: -6%; width: 54%; height: 66%; transform: rotate(-2deg); }
+
+.portada::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-1px;
+  height:120px;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.14));
+}
+
+.titulo-destacado {
+  background: transparent;
+  padding: 42px 24px;
+  text-align:center;
+}
+.titulo-destacado span {
+  color:#eaf2ff;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight:700;
+  text-shadow:0 2px 10px rgba(0,0,0,.45);
+  background: linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,0), rgba(255,255,255,.08));
+  padding:10px 18px;
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+
+.destacado {
+  position: relative;
+  min-height: 560px;
+  padding: 32px 24px 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+.destacado::before{
+  content:"";
+  position:absolute;
+  inset:-80px 0 -20px 0;
+  pointer-events:none;
+  background: radial-gradient(120% 170% at 50% 120%, rgba(0,0,0,.28), transparent 60%);
+  mix-blend-mode: multiply;
+}
+.rejilla-destacado {
+  position: relative;
+  min-height: 420px;
+  margin: 24px auto 16px;
+  width: min(980px, 92vw);
+}
+.rejilla-destacado .img-destacado {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+  border: 1px solid rgba(255, 255, 255, .7);
+}
+.img-d1 { left: 0; top: 0; width: 48%; height: 62%; }
+.img-d2 { left: 34%; top: 26%; width: 42%; height: 52%; }
+.img-d3 { right: 2%; top: 42%; width: 38%; height: 50%; }
+
+.texto-destacado {
+  margin: 36px auto 0;
+  width: min(980px, 92vw);
+  color: #eaf2ff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+.texto-destacado h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 8px; }
+.texto-destacado p  { font-size: clamp(14px, 1.9vw, 17px); margin-bottom: 16px; }
+
+.lista-beneficios {
+  list-style: disc;
+  margin: 10px 0 18px 22px;
+  color: #eaf2ff;
+  opacity: .95;
+  line-height: 1.6;
+}
+.etiquetas-confianza {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 8px 0 16px;
+}
+.etiquetas-confianza span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  color: #eaf2ff;
+  border: 1px solid rgba(255,255,255,.18);
+  font-size: 14px;
+}
+
+@media (max-width: 960px) {
+  .portada .tarjetas-portada { position: relative; width: 100%; height: 320px; right: auto; top: auto; margin: 8px 0 16px; }
+  .portada .tarjeta { width: 55%; height: 60%; }
+  .rejilla-destacado { min-height: 360px; }
+}
+@media (max-width: 640px) {
+  .portada { min-height: 520px; }
+  .portada .texto-portada { padding: 32px 16px; }
+  .titulo-destacado { padding: 30px 16px; }
+  .rejilla-destacado { min-height: 340px; }
+}
