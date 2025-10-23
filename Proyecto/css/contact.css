@@ -51,7 +51,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  overflow: hidden; 
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,8 +62,8 @@ body {
 .logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  border-radius: 50%; 
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .marca {
@@ -202,12 +202,76 @@ textarea:focus {
   margin-top: 40px;
 }
 
-@media (max-width: 640px) {
+
+@media (max-width: 480px) {
+  .menu {
+    gap: 10px;
+    padding: 0 12px;
+    min-height: 64px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iconos .enlace-nav {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .contacto {
+    padding: 40px 12px 52px;
+  }
+
   .contacto-contenido {
-    padding: 30px 20px;
+    width: 92%;
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  .texto-contacto {
+    margin-bottom: 18px;
   }
 
   .texto-contacto h1 {
-    font-size: 32px;
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .texto-contacto p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .formulario-contacto {
+    gap: 14px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input,
+  textarea {
+    font-size: 15px;
+    padding: 12px 14px;
+    min-height: 44px;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
+
+  .boton {
+    padding: 14px 22px;
+    border-radius: 14px;
+    font-size: 16px;
+  }
+
+  .pie {
+    font-size: 13px;
+    padding: 16px;
+    margin-top: 24px;
   }
 }

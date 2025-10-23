@@ -274,31 +274,104 @@ body {
 }
 
 
-@media (max-width:960px) {
-    .especificaciones {
-        grid-template-columns: 1fr;
+
+@media (max-width: 480px) {
+    .menu {
+        gap: 10px;
+        padding: 0 12px;
+        min-height: 64px;
     }
 
-    .dato {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, .14);
+    .logo {
+        width: 40px;
+        height: 40px;
     }
 
-    .dato:last-child {
-        border-bottom: none;
+    .iconos .enlace-nav {
+        padding: 8px 10px;
+        font-size: 13px;
     }
 
-    .rejilla-beneficios {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width:680px) {
     .producto-principal {
         min-height: 360px;
     }
 
     .texto-principal {
-        padding: 28px 16px;
+        padding: 20px 16px 18px;
+        max-width: 92vw;
+    }
+
+    .texto-principal h1 {
+        font-size: 26px;
+    }
+
+    .texto-principal p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .especificaciones {
+        grid-template-columns: 1fr;
+        border-radius: 12px;
+        margin: 8px 12px 0;
+        overflow: hidden;
+    }
+
+    .dato {
+        padding: 16px;
+    }
+
+    .dato h3 {
+        font-size: 13px;
+    }
+
+    .valor {
+        font-size: 20px;
+    }
+
+    .valor.grande {
+        font-size: 24px;
+    }
+
+    .texto-motor {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .beneficios {
+        padding: 30px 12px 40px;
+    }
+
+    .beneficios h2 {
+        font-size: 22px;
+    }
+
+    .beneficios .subtitulo {
+        font-size: 15px;
+        padding: 0 6px;
+    }
+
+    .rejilla-beneficios {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        width: 92%;
+    }
+
+    .beneficio {
+        padding: 18px;
+    }
+
+    .beneficio h4 {
+        font-size: 15px;
+    }
+
+    .beneficio p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .pie {
+        font-size: 13px;
+        padding: 16px;
     }
 }
