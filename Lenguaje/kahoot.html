@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahoot - Lenguajes y Autómatas II</title>
+    <link rel="stylesheet" href="css/kahoot.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="logo">Lenguajes y Autómatas II</div>
+
+        <nav class="nav">
+            <a href="dashboard.html">Inicio</a>
+            <a href="unite1.html">Unidad 1</a>
+            <a href="unite2.html">Unidad 2</a>
+            <a href="unite3.html">Unidad 3</a>
+            <a href="unite4.html">Unidad 4</a>
+        </nav>
+    </header>
+
+    <main class="quiz-page">
+
+        <section class="quiz-hero">
+            <div class="hero-content">
+                <span class="mini-badge">Modo juego</span>
+                <h1>Quiz tipo Kahoot</h1>
+                <p>
+                    Pon a prueba tus conocimientos sobre análisis semántico, código intermedio,
+                    optimización y generación de código objeto.
+                </p>
+            </div>
+        </section>
+
+        <section class="game-container">
+
+            <div class="start-card" id="startScreen">
+                <div class="icon-circle">🎮</div>
+
+                <h2>¿Lista para comenzar?</h2>
+
+                <p>
+                    Responde preguntas basadas en las 4 unidades de la página.
+                    Cada respuesta correcta suma puntos.
+                </p>
+
+                <div class="game-info">
+                    <div>
+                        <strong>20</strong>
+                        <span>Preguntas</span>
+                    </div>
+
+                    <div>
+                        <strong>4</strong>
+                        <span>Unidades</span>
+                    </div>
+
+                    <div>
+                        <strong>100</strong>
+                        <span>Puntos c/u</span>
+                    </div>
+                </div>
+
+                <button class="main-btn" id="startBtn">
+                    Iniciar quiz
+                </button>
+            </div>
+
+            <div class="quiz-card hidden" id="quizScreen">
+
+                <div class="quiz-top">
+                    <div>
+                        <span class="label">Pregunta</span>
+                        <h3 id="questionCounter">1 / 20</h3>
+                    </div>
+
+                    <div>
+                        <span class="label">Puntaje</span>
+                        <h3 id="scoreText">0 pts</h3>
+                    </div>
+
+                    <div>
+                        <span class="label">Tiempo</span>
+                        <h3 id="timerText">20s</h3>
+                    </div>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="unit-pill" id="unitText">
+                    Unidad 1
+                </div>
+
+                <h2 class="question-title" id="questionText">
+                    Aquí va la pregunta
+                </h2>
+
+                <div class="answers-grid" id="answersBox">
+                    <!-- Las respuestas se crean desde JavaScript -->
+                </div>
+
+                <div class="feedback-box hidden" id="feedbackBox">
+                    <h3 id="feedbackTitle"></h3>
+                    <p id="feedbackText"></p>
+                </div>
+
+                <button class="next-btn hidden" id="nextBtn">
+                    Siguiente pregunta
+                </button>
+
+            </div>
+
+            <div class="result-card hidden" id="resultScreen">
+                <div class="icon-circle">🏆</div>
+
+                <h2>Resultado final</h2>
+
+                <p class="final-score" id="finalScore">
+                    0 / 2000 puntos
+                </p>
+
+                <p class="final-message" id="finalMessage">
+                    Mensaje final
+                </p>
+
+                <div class="result-actions">
+                    <button class="main-btn" id="restartBtn">
+                        Repetir quiz
+                    </button>
+
+                    <a href="dashboard.html" class="home-btn">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/kahoot.js"></script>
+</body>
+
+</html>

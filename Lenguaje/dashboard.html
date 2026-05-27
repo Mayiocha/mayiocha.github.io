@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lenguajes y Autómatas II</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="logo">Lenguajes y Autómatas II</div>
+
+        <nav class="nav">
+            <a href="unite1.html">Unidad 1</a>
+            <a href="unite2.html">Unidad 2</a>
+            <a href="unite3.html">Unidad 3</a>
+            <a href="unite4.html">Unidad 4</a>
+            <a href="kahoot.html">Quiz</a>
+        </nav>
+    </header>
+
+    <section class="hero hero-unit-1">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+
+            <h1>Unidad 1 - Análisis semántico</h1>
+
+            <p id="heroDescription">
+                Aprende cómo los compiladores verifican el significado lógico del código mediante árboles de expresión,
+                comprobación de tipos y manejo de errores semánticos.
+            </p>
+
+            <a href="unite1.html" class="hero-btn" id="heroUnitBtn">
+                Explorar Unidad 1
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="summary">
+
+        <div class="summary-box">
+            <h3>4 Unidades</h3>
+            <p>Temas clave del curso organizados de forma clara.</p>
+        </div>
+
+        <div class="summary-box">
+            <h3>Contenido Visual</h3>
+            <p>Diseño amigable para estudiar de forma más ordenada.</p>
+        </div>
+
+        <div class="summary-box">
+            <h3>Navegación Rápida</h3>
+            <p>Accede fácilmente a cada unidad y sus temas principales.</p>
+        </div>
+
+    </section>
+
+    <div class="container">
+
+        <aside class="sidebar">
+
+            <h2>Contenido</h2>
+
+            <ul>
+                <li>
+                    <a href="unite1.html">
+                        Unidad 1 - Análisis semántico
+                    </a>
+                </li>
+
+                <li>
+                    <a href="unite2.html">
+                        Unidad 2 - Generación de código intermedio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="unite3.html">
+                        Unidad 3 - Optimización
+                    </a>
+                </li>
+
+                <li>
+                    <a href="unite4.html">
+                        Unidad 4 - Generación de código objeto
+                    </a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <main class="main-content">
+
+            <section class="card card-1" id="unidad1">
+
+                <h2>Unidad 1 - Análisis semántico</h2>
+
+                <p>
+                    El análisis semántico verifica que las instrucciones del programa tengan
+                    sentido lógico y respeten las reglas del lenguaje de programación.
+                    En esta unidad se estudian árboles de expresiones, comprobación de tipos,
+                    acciones semánticas y manejo de errores semánticos.
+                </p>
+
+                <a href="unite1.html" class="card-btn">
+                    Explorar
+                </a>
+
+            </section>
+
+            <section class="card card-2" id="unidad2">
+
+                <h2>Unidad 2 - Generación de código intermedio</h2>
+
+                <p>
+                    La generación de código intermedio transforma las instrucciones del programa
+                    fuente en representaciones más simples y estructuradas. Esta etapa facilita
+                    la optimización y la traducción posterior a código objeto.
+                </p>
+
+                <a href="unite2.html" class="card-btn">
+                    Explorar
+                </a>
+
+            </section>
+
+            <section class="card card-3" id="unidad3">
+
+                <h2>Unidad 3 - Optimización</h2>
+
+                <p>
+                    La optimización mejora la eficiencia del código generado sin modificar
+                    el comportamiento del programa. Se analizan técnicas para reducir costos
+                    de ejecución y mejorar el rendimiento general.
+                </p>
+
+                <a href="unite3.html" class="card-btn">
+                    Explorar
+                </a>
+
+            </section>
+
+            <section class="card card-4" id="unidad4">
+
+                <h2>Unidad 4 - Generación de código objeto</h2>
+
+                <p>
+                    La generación de código objeto transforma el código intermedio en
+                    instrucciones cercanas al lenguaje máquina, considerando registros,
+                    memoria y arquitectura del sistema.
+                </p>
+
+                <a href="unite4.html" class="card-btn">
+                    Explorar
+                </a>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        © 2026 Ingeniería en Sistemas | Lenguajes y Autómatas II
+    </footer>
+
+    <script>
+        const unidades = [
+
+            {
+                titulo: "Unidad 1 · Análisis semántico",
+
+                descripcion:
+                    "Aprende cómo los compiladores verifican el significado lógico del código mediante árboles de expresión, comprobación de tipos y manejo de errores semánticos.",
+
+                texto: "Explorar Unidad 1",
+
+                link: "unite1.html",
+
+                clase: "hero-unit-1"
+            },
+
+            {
+                titulo: "Unidad 2 · Código intermedio",
+
+                descripcion:
+                    "Estudia cómo un compilador transforma instrucciones fuente en representaciones intermedias utilizando notaciones, tríplos, cuádruplos y esquemas de generación.",
+
+                texto: "Explorar Unidad 2",
+
+                link: "unite2.html",
+
+                clase: "hero-unit-2"
+            },
+
+            {
+                titulo: "Unidad 3 · Optimización",
+
+                descripcion:
+                    "Conoce técnicas para mejorar la eficiencia del código reduciendo costos de ejecución, optimizando recursos y aplicando análisis de flujo de datos.",
+
+                texto: "Explorar Unidad 3",
+
+                link: "unite3.html",
+
+                clase: "hero-unit-3"
+            },
+
+            {
+                titulo: "Unidad 4 · Código objeto",
+
+                descripcion:
+                    "Explora cómo el compilador genera instrucciones cercanas al lenguaje máquina utilizando registros, memoria y estructuras de código ensamblador.",
+
+                texto: "Explorar Unidad 4",
+
+                link: "unite4.html",
+
+                clase: "hero-unit-4"
+            }
+
+        ];
+        let indice = 0;
+
+        const hero = document.querySelector(".hero");
+        const boton = document.getElementById("heroUnitBtn");
+        const titulo = document.querySelector(".hero-text h1");
+        const descripcion = document.getElementById("heroDescription");
+
+        setInterval(() => {
+            titulo.classList.add("slide-out");
+            boton.classList.add("slide-out");
+
+            setTimeout(() => {
+                indice = (indice + 1) % unidades.length;
+
+                hero.classList.remove(
+                    "hero-unit-1",
+                    "hero-unit-2",
+                    "hero-unit-3",
+                    "hero-unit-4"
+                );
+
+                hero.classList.add(unidades[indice].clase);
+
+                titulo.textContent = unidades[indice].titulo;
+                descripcion.textContent = unidades[indice].descripcion;
+                boton.textContent = unidades[indice].texto;
+                boton.href = unidades[indice].link;
+
+                titulo.classList.remove("slide-out");
+                boton.classList.remove("slide-out");
+
+                titulo.classList.add("slide-in");
+                boton.classList.add("slide-in");
+
+                setTimeout(() => {
+                    titulo.classList.remove("slide-in");
+                    boton.classList.remove("slide-in");
+                }, 500);
+
+            }, 450);
+        }, 3500);
+    </script>
+
+</body>
+
+</html>

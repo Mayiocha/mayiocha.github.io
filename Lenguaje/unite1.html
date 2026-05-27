@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1 - Análisis semántico</title>
+    <link rel="stylesheet" href="css/unidades-detalle.css">
+</head>
+
+<body class="unit1">
+
+    <header class="topbar">
+        <div class="logo">Lenguajes y Autómatas II</div>
+
+        <nav class="nav">
+            <a href="dashboard.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <section class="hero">
+            <h1>Unidad 1 · Análisis semántico</h1>
+
+            <p>
+                El análisis semántico es una fase del compilador encargada de verificar
+                que las instrucciones del programa tengan sentido lógico y respeten las
+                reglas del lenguaje de programación.
+            </p>
+        </section>
+
+        <section class="section-block">
+            <h2>1.1 Árboles de expresiones</h2>
+
+            <div class="topic">
+
+                <p>
+                    Los árboles de expresiones son estructuras utilizadas para representar operaciones
+                    matemáticas y lógicas de forma jerárquica. Cada nodo del árbol representa un operador
+                    o un operando.
+                </p>
+
+                <p>
+                    Los operandos normalmente se encuentran en las hojas del árbol, mientras que los
+                    operadores aparecen en los nodos internos. Esto permite visualizar claramente
+                    el orden en que deben ejecutarse las operaciones.
+                </p>
+
+                <p>
+                    Los compiladores utilizan árboles de expresiones para analizar expresiones complejas
+                    y generar código intermedio de manera organizada.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión</span>
+a + b * c</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Árbol conceptual</span>
+      +
+     / \
+    a   *
+       / \
+      b   c</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Importancia:</strong> permiten identificar la prioridad y el orden correcto de las operaciones.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>1.2 Acciones semánticas de un analizador sintáctico</h2>
+
+            <div class="topic">
+
+                <p>
+                    Las acciones semánticas son operaciones que realiza el compilador durante el análisis
+                    sintáctico para validar el significado del programa.
+                </p>
+
+                <p>
+                    Estas acciones permiten verificar tipos de datos, registrar variables en la tabla
+                    de símbolos y generar información necesaria para las etapas posteriores del compilador.
+                </p>
+
+                <p>
+                    Cada vez que el analizador reconoce una regla gramatical, puede ejecutar una acción
+                    semántica asociada.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Declaración</span>
+int edad;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Acción semántica conceptual</span>
+Insertar "edad" en tabla de símbolos
+Asignar tipo entero</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Objetivo:</strong> comprobar que el programa tenga sentido además de una sintaxis correcta.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>1.3 Comprobaciones de tipos en expresiones</h2>
+
+            <div class="topic">
+
+                <p>
+                    La comprobación de tipos consiste en verificar que las operaciones se realicen
+                    entre datos compatibles.
+                </p>
+
+                <p>
+                    El compilador revisa que variables, constantes y expresiones utilicen tipos válidos
+                    para evitar errores durante la ejecución del programa.
+                </p>
+
+                <p>
+                    Si se intenta combinar tipos incompatibles, el compilador genera un error semántico.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Correcto</span>
+int a = 5;
+int b = 3;
+int c = a + b;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Incorrecto</span>
+int edad = 20;
+string nombre = "Luis";
+
+edad = edad + nombre;</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Error semántico:</strong> no se puede sumar un entero con una cadena de texto.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>1.4 Pila semántica en un analizador sintáctico</h2>
+
+            <div class="topic">
+
+                <p>
+                    La pila semántica es una estructura utilizada por el compilador para almacenar
+                    información temporal durante el análisis de expresiones y sentencias.
+                </p>
+
+                <p>
+                    En ella se guardan operandos, operadores y resultados parciales que ayudan a validar
+                    el significado del programa.
+                </p>
+
+                <p>
+                    Esta pila trabaja junto con el analizador sintáctico para evaluar reglas gramaticales
+                    y construir expresiones correctamente.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión</span>
+a + b * c</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Operaciones en pila</span>
+Push a
+Push b
+Push c
+Aplicar *
+Aplicar +</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Función:</strong> ayuda a controlar y evaluar expresiones durante el análisis.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>1.5 Esquema de traducción</h2>
+
+            <div class="topic">
+
+                <p>
+                    El esquema de traducción define las acciones que debe realizar el compilador
+                    cuando reconoce determinadas estructuras del lenguaje.
+                </p>
+
+                <p>
+                    Estas acciones pueden generar código intermedio, actualizar la tabla de símbolos
+                    o verificar reglas semánticas.
+                </p>
+
+                <p>
+                    El esquema de traducción relaciona reglas gramaticales con instrucciones que
+                    permiten transformar el programa fuente.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión</span>
+x = a + b</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Traducción conceptual</span>
+t1 = a + b
+x = t1</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Objetivo:</strong> convertir estructuras del lenguaje en instrucciones procesables.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>1.6 Generación de la tabla de símbolo y tabla de direcciones</h2>
+
+            <div class="topic">
+
+                <p>
+                    La tabla de símbolos es una estructura utilizada para almacenar información
+                    sobre variables, constantes, funciones y otros identificadores del programa.
+                </p>
+
+                <p>
+                    La tabla de direcciones guarda referencias relacionadas con posiciones de memoria
+                    utilizadas durante la ejecución.
+                </p>
+
+                <p>
+                    Ambas estructuras son fundamentales para las fases de análisis semántico,
+                    generación de código intermedio y optimización.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Declaraciones</span>
+int edad;
+float promedio;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Tabla conceptual</span>
+edad      entero      1000
+promedio  real        1004</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Importancia:</strong> permiten organizar y localizar los elementos del programa.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>1.7 Manejo de errores semánticos</h2>
+
+            <div class="topic">
+
+                <p>
+                    El manejo de errores semánticos consiste en detectar problemas relacionados
+                    con el significado del programa durante la compilación.
+                </p>
+
+                <p>
+                    Estos errores aparecen cuando el código tiene una sintaxis correcta, pero
+                    viola reglas semánticas del lenguaje de programación.
+                </p>
+
+                <p>
+                    El compilador debe identificar estos problemas y mostrar mensajes claros
+                    para ayudar al programador a corregirlos.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Variable no declarada</span>
+total = precio * cantidad;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Error de tipos</span>
+int edad = 20;
+edad = "veinte";</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Objetivo:</strong> detectar errores antes de ejecutar el programa.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Ingeniería en Sistemas | Unidad 1
+    </footer>
+
+</body>
+</html>

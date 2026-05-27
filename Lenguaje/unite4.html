@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 - Generación de código objeto</title>
+    <link rel="stylesheet" href="css/unidades-detalle.css">
+</head>
+
+<body class="unit4">
+
+    <header class="topbar">
+        <div class="logo">Lenguajes y Autómatas II</div>
+
+        <nav class="nav">
+            <a href="dashboard.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <section class="hero">
+            <h1>Unidad 4 · Generación de código objeto</h1>
+
+            <p>
+                La generación de código objeto transforma el código intermedio en instrucciones
+                que pueden ser entendidas directamente por la computadora. En esta fase se trabaja
+                con registros, lenguaje ensamblador, lenguaje máquina y administración de memoria.
+            </p>
+        </section>
+
+        <section class="section-block">
+            <h2>4.1 Registros</h2>
+
+            <div class="topic">
+
+                <p>
+                    Los registros son pequeñas unidades de almacenamiento ubicadas dentro del procesador.
+                    Se utilizan para guardar datos temporales y resultados de operaciones mientras
+                    el programa se está ejecutando.
+                </p>
+
+                <p>
+                    Los registros son mucho más rápidos que la memoria RAM, por eso el compilador intenta
+                    utilizarlos para acelerar las operaciones matemáticas y lógicas.
+                </p>
+
+                <p>
+                    Existen diferentes tipos de registros dependiendo de la arquitectura del procesador,
+                    como registros de propósito general, registros de control y registros de direcciones.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Ejemplo conceptual</span>
+LOAD R1, A
+LOAD R2, B
+ADD R3, R1, R2
+STORE C, R3</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+MOV AX, 10
+MOV BX, 5
+SUB AX, BX</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Resultado:</strong> las operaciones se ejecutan utilizando registros internos del procesador.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>4.2 Lenguaje ensamblador</h2>
+
+            <div class="topic">
+
+                <p>
+                    El lenguaje ensamblador es una representación simbólica del lenguaje máquina.
+                    Utiliza instrucciones fáciles de identificar para representar operaciones que
+                    el procesador puede ejecutar.
+                </p>
+
+                <p>
+                    Cada instrucción ensambladora corresponde casi directamente a una instrucción
+                    binaria del procesador.
+                </p>
+
+                <p>
+                    Este lenguaje permite tener un mayor control sobre el funcionamiento interno
+                    de la computadora y es utilizado en sistemas operativos y programas de bajo nivel.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Código ensamblador</span>
+MOV AX, 5
+MOV BX, 3
+ADD AX, BX</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Comparación</span>
+CMP AX, BX
+JE iguales</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Interpretación:</strong> las instrucciones permiten mover datos y realizar operaciones directamente en el procesador.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>4.3 Lenguaje máquina</h2>
+
+            <div class="topic">
+
+                <p>
+                    El lenguaje máquina está formado por secuencias binarias compuestas por unos y ceros.
+                    Estas instrucciones son entendidas directamente por el hardware sin necesidad de traducción.
+                </p>
+
+                <p>
+                    Cada procesador tiene su propio conjunto de instrucciones, por lo que un programa
+                    compilado para una arquitectura específica puede no funcionar en otra diferente.
+                </p>
+
+                <p>
+                    Aunque el lenguaje máquina es difícil de leer para las personas, representa la forma
+                    final en que un programa es ejecutado por la computadora.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Representación conceptual</span>
+10110000 00000101
+00000100 00000011</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Otra instrucción</span>
+11100010 00000001</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Importancia:</strong> es el lenguaje ejecutado directamente por el procesador.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>4.4 Administración de memoria</h2>
+
+            <div class="topic">
+
+                <p>
+                    La administración de memoria organiza la forma en que se almacenan variables,
+                    instrucciones y datos temporales durante la ejecución del programa.
+                </p>
+
+                <p>
+                    El compilador debe decidir cómo reservar memoria para variables locales, globales
+                    y estructuras necesarias para el funcionamiento del programa.
+                </p>
+
+                <p>
+                    Una administración eficiente de memoria ayuda a mejorar el rendimiento del sistema
+                    y evita errores relacionados con accesos inválidos o pérdida de información.
+                </p>
+
+                <ul>
+                    <li>Asignación de memoria para variables.</li>
+                    <li>Uso de pila para llamadas a funciones.</li>
+                    <li>Manejo de direcciones de memoria.</li>
+                    <li>Control de espacios temporales.</li>
+                </ul>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Ejemplo conceptual</span>
+PUSH A
+PUSH B
+CALL sumar
+POP resultado</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Importancia:</strong> permite utilizar los recursos de memoria de manera ordenada y eficiente.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Ingeniería en Sistemas | Unidad 4
+    </footer>
+
+</body>
+</html>

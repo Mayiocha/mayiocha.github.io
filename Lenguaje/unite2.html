@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Generación de código intermedio</title>
+    <link rel="stylesheet" href="css/unidades-detalle.css">
+</head>
+
+<body class="unit2">
+
+    <header class="topbar">
+        <div class="logo">Lenguajes y Autómatas II</div>
+
+        <nav class="nav">
+            <a href="dashboard.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <section class="hero">
+            <h1>Unidad 2 · Generación de código intermedio</h1>
+
+            <p>
+                La generación de código intermedio transforma el programa fuente en una representación
+                más sencilla de analizar y modificar. Esta etapa facilita la optimización y sirve como
+                puente entre el análisis del programa y la generación de código objeto.
+            </p>
+        </section>
+
+        <section class="section-block">
+            <h2>2.1 Notaciones</h2>
+
+            <div class="topic">
+
+                <p>
+                    Las notaciones son formas distintas de representar expresiones matemáticas y lógicas.
+                    Son utilizadas por los compiladores para organizar operaciones y facilitar la traducción
+                    del programa a código intermedio.
+                </p>
+
+                <p>
+                    Dependiendo de la posición del operador respecto a los operandos, una expresión puede
+                    escribirse en forma prefija, infija o postfija.
+                </p>
+
+                <div class="result-box">
+                    <strong>Importancia:</strong> las notaciones ayudan a definir claramente el orden de evaluación de una expresión.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>2.1.1 Prefija</h2>
+
+            <div class="topic">
+
+                <p>
+                    En la notación prefija el operador se coloca antes de los operandos. Esta forma
+                    elimina la necesidad de usar paréntesis para indicar prioridades entre operaciones.
+                </p>
+
+                <p>
+                    La notación prefija es utilizada en compiladores porque facilita el análisis de
+                    expresiones y simplifica algunos procesos de traducción a código intermedio.
+                </p>
+
+                <p>
+                    En esta notación, primero aparece la operación principal y después los valores
+                    sobre los que se aplicará dicha operación.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión infija</span>
+A + B
+
+<span class="code-comment">// Notación prefija</span>
++ A B</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión infija</span>
+(A + B) * C
+
+<span class="code-comment">// Notación prefija</span>
+* + A B C</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Interpretación:</strong> primero se realiza la suma A + B y posteriormente el resultado se multiplica por C.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>2.1.2 Infija</h2>
+
+            <div class="topic">
+
+                <p>
+                    La notación infija es la forma más común de escribir expresiones matemáticas y
+                    operaciones en lenguajes de programación. En ella, el operador se coloca entre
+                    los operandos.
+                </p>
+
+                <p>
+                    Esta notación es fácil de entender para las personas, aunque requiere reglas
+                    de prioridad y uso de paréntesis para evitar ambigüedades.
+                </p>
+
+                <p>
+                    Los compiladores suelen transformar expresiones infijas en otras representaciones
+                    para facilitar el análisis y la generación de código.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Ejemplos infijos</span>
+A + B
+X * Y
+C - D</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión compleja</span>
+(A + B) * (C - D)</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Uso:</strong> es la notación utilizada normalmente en matemáticas y programación.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>2.1.3 Postfija</h2>
+
+            <div class="topic">
+
+                <p>
+                    En la notación postfija el operador se coloca después de los operandos. También
+                    se conoce como notación polaca inversa.
+                </p>
+
+                <p>
+                    Esta representación facilita la evaluación de expresiones utilizando estructuras
+                    tipo pila, por lo que es muy utilizada en compiladores e intérpretes.
+                </p>
+
+                <p>
+                    Una ventaja importante es que no necesita paréntesis para indicar el orden de
+                    evaluación.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión infija</span>
+A + B
+
+<span class="code-comment">// Notación postfija</span>
+A B +</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión infija</span>
+(A + B) * C
+
+<span class="code-comment">// Notación postfija</span>
+A B + C *</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Ventaja:</strong> simplifica el procesamiento de expresiones aritméticas.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>2.2 Representaciones de código intermedio</h2>
+
+            <div class="topic">
+
+                <p>
+                    Las representaciones de código intermedio son estructuras utilizadas por el compilador
+                    para trabajar con el programa antes de producir el código final.
+                </p>
+
+                <p>
+                    Estas representaciones facilitan el análisis, la optimización y la traducción del
+                    programa a lenguaje máquina.
+                </p>
+
+                <div class="result-box">
+                    <strong>Objetivo:</strong> simplificar el proceso de traducción entre el lenguaje fuente y el código objeto.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>2.2.1 Notación Polaca</h2>
+
+            <div class="topic">
+
+                <p>
+                    La notación polaca coloca primero el operador y después los operandos.
+                    Esta forma de representación evita ambigüedades en expresiones matemáticas.
+                </p>
+
+                <p>
+                    En compiladores ayuda a representar expresiones de manera estructurada y sencilla.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Expresión infija</span>
+(A + B) * C
+
+<span class="code-comment">// Notación polaca</span>
+* + A B C</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+(A - B) / D
+
+<span class="code-comment">// Notación polaca</span>
+/ - A B D</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Importancia:</strong> facilita la representación estructurada de operaciones complejas.
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>2.2.2 Código P</h2>
+
+            <div class="topic">
+
+                <p>
+                    El Código P es una representación intermedia diseñada para ejecutarse sobre una
+                    máquina virtual. Esto permite que el programa sea portable entre distintas plataformas.
+                </p>
+
+                <p>
+                    Las instrucciones del Código P son más simples que las instrucciones reales del
+                    procesador y sirven como paso intermedio antes de generar el código final.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Ejemplo conceptual</span>
+LDC 5
+LDC 3
+ADI
+STO resultado</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+LOD A
+LOD B
+MPI
+STO total</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Uso:</strong> permite ejecutar programas mediante una máquina virtual.
+                </div>
+
+            </div>
+        </section>
+        <section class="section-block">
+    <h2>2.2.3 Tripos</h2>
+
+    <div class="topic">
+        <p>
+            Los triples son una representación de código intermedio que utiliza tres campos:
+            operador, argumento uno y argumento dos. A diferencia de los cuádruplos, no usan
+            un campo separado para guardar el resultado.
+        </p>
+
+        <p>
+            El resultado de cada operación se identifica por el número o posición de la instrucción.
+            Esto permite hacer referencia a resultados anteriores sin crear tantas variables temporales.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Expresión original</span>
+x = a + b * c
+
+<span class="code-comment">// Representación en triples</span>
+0: (*, b, c)
+1: (+, a, 0)
+2: (=, 1, x)</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+y = (m - n) / p
+
+<span class="code-comment">// Triples</span>
+0: (-, m, n)
+1: (/, 0, p)
+2: (=, 1, y)</pre>
+        </div>
+
+        <div class="result-box">
+            <strong>Característica:</strong> los triples usan referencias por posición para reutilizar resultados.
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.2.4 Cuádruplos</h2>
+
+    <div class="topic">
+        <p>
+            Los cuádruplos representan una instrucción mediante cuatro elementos: operador,
+            argumento uno, argumento dos y resultado. Son muy utilizados porque permiten ver
+            claramente dónde se guarda cada operación.
+        </p>
+
+        <p>
+            Esta representación facilita la optimización, ya que cada resultado temporal tiene
+            un nombre propio y puede analizarse con mayor facilidad.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Formato general</span>
+(operador, argumento1, argumento2, resultado)
+
+<span class="code-comment">// Ejemplo</span>
+(*, b, c, t1)
+(+, a, t1, t2)
+(=, t2, -, x)</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+(-, m, n, t1)
+(/, t1, p, t2)
+(=, t2, -, y)</pre>
+        </div>
+
+        <div class="result-box">
+            <strong>Ventaja:</strong> son fáciles de leer, analizar y transformar durante la optimización.
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3 Esquema de generación</h2>
+
+    <div class="topic">
+        <p>
+            El esquema de generación describe cómo el compilador produce código intermedio a partir
+            de las diferentes partes de un programa. Cada construcción del lenguaje necesita una forma
+            específica de traducción.
+        </p>
+
+        <p>
+            Este esquema permite convertir variables, constantes, expresiones, asignaciones,
+            instrucciones de control, funciones y estructuras en instrucciones intermedias.
+        </p>
+
+        <div class="result-box">
+            <strong>Objetivo:</strong> traducir cada elemento del lenguaje fuente a una representación intermedia clara.
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3.1 Variables y constantes</h2>
+
+    <div class="topic">
+        <p>
+            Las variables son espacios de memoria cuyo valor puede cambiar durante la ejecución
+            del programa. Las constantes, en cambio, mantienen el mismo valor durante todo el proceso.
+        </p>
+
+        <p>
+            Durante la generación de código intermedio, el compilador registra estos elementos en
+            la tabla de símbolos y los utiliza para generar instrucciones correctas.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Variables</span>
+int edad = 20;
+float promedio = 9.5;
+
+<span class="code-comment">// Constante</span>
+const PI = 3.1416;</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Código intermedio conceptual</span>
+edad = 20
+promedio = 9.5
+PI = 3.1416</pre>
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3.2 Expresiones</h2>
+
+    <div class="topic">
+        <p>
+            Las expresiones combinan variables, constantes y operadores para producir un valor.
+            Pueden incluir operaciones aritméticas, relacionales o lógicas.
+        </p>
+
+        <p>
+            En código intermedio, una expresión compleja se divide en instrucciones simples
+            para facilitar su análisis y posterior optimización.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Expresión original</span>
+x = a + b * c
+
+<span class="code-comment">// Código intermedio</span>
+t1 = b * c
+t2 = a + t1
+x = t2</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+z = (a - b) + (c * d)
+
+<span class="code-comment">// Código intermedio</span>
+t1 = a - b
+t2 = c * d
+t3 = t1 + t2
+z = t3</pre>
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3.3 Instrucción de asignación</h2>
+
+    <div class="topic">
+        <p>
+            La instrucción de asignación permite guardar un valor dentro de una variable.
+            En los lenguajes de programación se representa comúnmente con el signo igual.
+        </p>
+
+        <p>
+            Cuando la asignación contiene una expresión compleja, el compilador la descompone
+            en varias instrucciones intermedias más simples.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Asignación original</span>
+resultado = (a + b) / c
+
+<span class="code-comment">// Código intermedio</span>
+t1 = a + b
+t2 = t1 / c
+resultado = t2</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+total = precio * cantidad + impuesto
+
+<span class="code-comment">// Código intermedio</span>
+t1 = precio * cantidad
+t2 = t1 + impuesto
+total = t2</pre>
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3.4 Instrucciones de control</h2>
+
+    <div class="topic">
+        <p>
+            Las instrucciones de control modifican el flujo normal de ejecución de un programa.
+            Entre ellas se encuentran las condiciones, los ciclos y los saltos.
+        </p>
+
+        <p>
+            En código intermedio se representan mediante etiquetas y saltos condicionales o
+            incondicionales.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Condición original</span>
+if (a > b) {
+    x = a;
+} else {
+    x = b;
+}
+
+<span class="code-comment">// Código intermedio</span>
+if a > b goto L1
+x = b
+goto L2
+L1: x = a
+L2:</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Ciclo original</span>
+while (i < 5) {
+    i = i + 1;
+}
+
+<span class="code-comment">// Código intermedio</span>
+L1: if i >= 5 goto L2
+t1 = i + 1
+i = t1
+goto L1
+L2:</pre>
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3.5 Funciones</h2>
+
+    <div class="topic">
+        <p>
+            Las funciones son bloques de instrucciones que realizan una tarea específica.
+            Pueden recibir parámetros, ejecutar operaciones y devolver un resultado.
+        </p>
+
+        <p>
+            En código intermedio, las funciones se representan mediante instrucciones para pasar
+            parámetros, realizar llamadas y recuperar valores de retorno.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Llamada a función</span>
+resultado = suma(a, b)
+
+<span class="code-comment">// Código intermedio</span>
+param a
+param b
+call suma, 2
+resultado = return</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Otro ejemplo</span>
+area = calcularArea(base, altura)
+
+<span class="code-comment">// Código intermedio</span>
+param base
+param altura
+call calcularArea, 2
+area = return</pre>
+        </div>
+    </div>
+</section>
+
+<section class="section-block">
+    <h2>2.3.6 Estructuras</h2>
+
+    <div class="topic">
+        <p>
+            Las estructuras permiten agrupar varios datos relacionados bajo un mismo nombre.
+            Cada elemento dentro de una estructura se conoce como campo o atributo.
+        </p>
+
+        <p>
+            Durante la generación de código intermedio, el compilador calcula cómo acceder
+            a cada campo de la estructura y cómo almacenar sus valores.
+        </p>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Estructura conceptual</span>
+persona.nombre = "Luis";
+persona.edad = 21;</pre>
+        </div>
+
+        <div class="code-block">
+<pre><span class="code-comment">// Código intermedio conceptual</span>
+persona.nombre = "Luis"
+persona.edad = 21
+t1 = persona.edad</pre>
+        </div>
+
+        <div class="result-box">
+            <strong>Uso:</strong> las estructuras permiten organizar datos relacionados dentro de un programa.
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        © 2026 Ingeniería en Sistemas | Unidad 2
+    </footer>
+
+</body>
+</html>

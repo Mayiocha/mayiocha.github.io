@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 - Optimización</title>
+    <link rel="stylesheet" href="css/unidades-detalle.css">
+</head>
+
+<body class="unit3">
+
+    <header class="topbar">
+        <div class="logo">Lenguajes y Autómatas II</div>
+
+        <nav class="nav">
+            <a href="dashboard.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="page">
+
+        <section class="hero">
+            <h1>Unidad 3 · Optimización</h1>
+
+            <p>
+                La optimización busca mejorar el código generado por el compilador sin cambiar
+                el resultado del programa. Su propósito es reducir tiempos de ejecución, disminuir
+                el uso de memoria y eliminar instrucciones innecesarias.
+            </p>
+        </section>
+
+        <section class="section-block">
+            <h2>3.1 Tipos de optimización</h2>
+
+            <div class="topic">
+                <p>
+                    Los tipos de optimización permiten clasificar las mejoras que puede aplicar
+                    un compilador al código. Estas optimizaciones pueden realizarse en partes pequeñas
+                    del programa, dentro de ciclos, en funciones completas o en secuencias cortas
+                    de instrucciones.
+                </p>
+
+                <p>
+                    El objetivo es obtener un programa más eficiente, conservando siempre el mismo
+                    comportamiento lógico del código original.
+                </p>
+
+                <div class="result-box">
+                    <strong>Idea principal:</strong> optimizar significa mejorar el código sin modificar su resultado.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.1.1 Locales</h2>
+
+            <div class="topic">
+                <p>
+                    La optimización local se aplica dentro de un bloque básico, es decir, una secuencia
+                    de instrucciones que se ejecuta de forma continua, sin saltos internos.
+                </p>
+
+                <p>
+                    Este tipo de optimización permite eliminar instrucciones repetidas, simplificar
+                    expresiones y quitar código que no afecta el resultado final.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Antes</span>
+x = 5 + 3;
+y = x + 0;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Después</span>
+x = 8;
+y = x;</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Ejemplo:</strong> se simplifican operaciones dentro de una misma sección del programa.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.1.2 Ciclos</h2>
+
+            <div class="topic">
+                <p>
+                    La optimización de ciclos se enfoca en mejorar instrucciones que se repiten varias
+                    veces durante la ejecución. Debido a que los ciclos pueden ejecutarse muchas veces,
+                    pequeñas mejoras dentro de ellos pueden producir grandes beneficios.
+                </p>
+
+                <p>
+                    Una técnica común consiste en mover fuera del ciclo las operaciones que no cambian
+                    durante cada iteración.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Antes</span>
+for (i = 0; i < n; i++) {
+    x = a * b;
+    y[i] = x + i;
+}</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Después</span>
+x = a * b;
+
+for (i = 0; i < n; i++) {
+    y[i] = x + i;
+}</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Mejora:</strong> la multiplicación se realiza una sola vez en lugar de repetirse en cada vuelta.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.1.3 Globales</h2>
+
+            <div class="topic">
+                <p>
+                    La optimización global analiza partes más amplias del programa, como funciones
+                    completas o varios bloques conectados entre sí.
+                </p>
+
+                <p>
+                    Este tipo de optimización puede detectar valores que se repiten en diferentes
+                    secciones, eliminar código innecesario y mejorar el flujo general del programa.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Antes</span>
+a = b + c;
+d = b + c;
+e = d * 2;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Después</span>
+a = b + c;
+d = a;
+e = d * 2;</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Ventaja:</strong> permite reutilizar resultados y evitar cálculos repetidos en distintas partes del programa.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.1.4 De mirilla</h2>
+
+            <div class="topic">
+                <p>
+                    La optimización de mirilla revisa pequeñas secuencias de instrucciones consecutivas
+                    para reemplazarlas por versiones más cortas o eficientes.
+                </p>
+
+                <p>
+                    Se llama de mirilla porque el compilador observa una pequeña “ventana” del código
+                    y busca patrones que puedan simplificarse.
+                </p>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Antes</span>
+MOV A, B
+MOV B, A</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Después</span>
+MOV A, B</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Objetivo:</strong> eliminar instrucciones redundantes en secuencias pequeñas.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.2 Costos</h2>
+
+            <div class="topic">
+                <p>
+                    Los costos permiten medir qué tan eficiente es un programa o una instrucción.
+                    En compiladores, se consideran aspectos como tiempo de ejecución, uso de memoria,
+                    cantidad de registros utilizados y número de instrucciones generadas.
+                </p>
+
+                <p>
+                    Analizar los costos ayuda a decidir qué versión del código conviene generar
+                    para obtener mejor rendimiento.
+                </p>
+
+                <div class="result-box">
+                    <strong>Idea principal:</strong> el costo indica los recursos necesarios para ejecutar un programa.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.2.1 Costo de ejecución</h2>
+
+            <div class="topic">
+                <p>
+                    El costo de ejecución se refiere a los recursos que consume un programa mientras
+                    se ejecuta. Entre ellos se encuentran la memoria, los registros y la pila.
+                </p>
+
+                <ul>
+                    <li><strong>Memoria:</strong> espacio utilizado para variables, arreglos e instrucciones.</li>
+                    <li><strong>Registros:</strong> almacenamiento rápido dentro del procesador.</li>
+                    <li><strong>Pila:</strong> estructura usada para llamadas a funciones y datos temporales.</li>
+                </ul>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Código con mayor costo</span>
+x = a + b;
+y = a + b;
+z = y * 2;</pre>
+                </div>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Código con menor costo</span>
+x = a + b;
+y = x;
+z = y * 2;</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Mejora:</strong> se reduce el número de operaciones repetidas.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.2.2 Criterios para mejorar el código</h2>
+
+            <div class="topic">
+                <p>
+                    Para mejorar el código, el compilador utiliza criterios que ayudan a decidir
+                    qué instrucciones deben cambiarse, eliminarse o reorganizarse.
+                </p>
+
+                <p>
+                    Estos criterios buscan que el programa sea más rápido, use menos memoria y genere
+                    instrucciones más simples para la máquina.
+                </p>
+
+                <ul>
+                    <li>Eliminar operaciones innecesarias.</li>
+                    <li>Evitar cálculos repetidos.</li>
+                    <li>Reducir accesos a memoria.</li>
+                    <li>Utilizar registros de forma eficiente.</li>
+                    <li>Simplificar expresiones aritméticas.</li>
+                </ul>
+
+                <div class="result-box">
+                    <strong>Propósito:</strong> obtener un código más limpio, rápido y eficiente.
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>3.2.3 Herramientas para el análisis del flujo de datos</h2>
+
+            <div class="topic">
+                <p>
+                    El análisis del flujo de datos estudia cómo se mueven los valores dentro de un
+                    programa. Permite saber dónde se define una variable, dónde se usa y si su valor
+                    sigue siendo necesario.
+                </p>
+
+                <p>
+                    Este análisis es útil para detectar código muerto, variables no utilizadas,
+                    expresiones repetidas y oportunidades de optimización.
+                </p>
+
+                <ul>
+                    <li><strong>Grafos de flujo:</strong> representan los caminos posibles del programa.</li>
+                    <li><strong>Bloques básicos:</strong> agrupan instrucciones que se ejecutan juntas.</li>
+                    <li><strong>Análisis de variables vivas:</strong> identifica variables que aún serán usadas.</li>
+                    <li><strong>Análisis de definiciones:</strong> muestra dónde se asignan valores a variables.</li>
+                </ul>
+
+                <div class="code-block">
+<pre><span class="code-comment">// Ejemplo</span>
+x = 10;
+y = x + 2;
+x = 20;
+print(y);</pre>
+                </div>
+
+                <div class="result-box">
+                    <strong>Observación:</strong> el análisis permite saber qué valores siguen siendo importantes en el programa.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Ingeniería en Sistemas | Unidad 3
+    </footer>
+
+</body>
+</html>
